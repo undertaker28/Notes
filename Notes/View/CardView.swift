@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct CardView: View {
-    @State var noteDate: Date = Date.now
-    @State var noteMessage: String = "Muchas gracias aficiónados esto para vosotros. Síííííuuuuuuu!!!"
-    @State var noteColor: String = "Blue"
-    
+    var note: FetchedResults<Note>.Element
+
     var body: some View {
         VStack {
-            Text(noteMessage)
+            Text(note.message ?? "")
                 .font(.title3)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                Text(noteDate, style: .date)
+                Text(note.date ?? Date.now, style: .date)
                     .foregroundColor(.secondary)
                     .opacity(0.8)
                 Spacer(minLength: 0)
@@ -37,13 +35,7 @@ struct CardView: View {
             .padding(.top, 35)
         }
         .padding()
-        .background(Color(noteColor))
+        .background(Color(note.color ?? "Blue"))
         .cornerRadius(18)
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
     }
 }
