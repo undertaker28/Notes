@@ -81,13 +81,35 @@ struct HomeView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 30) {
                 ForEach(notes) { note in
-                    NavigationLink {
-                        //AddNoteView(showAddPage: <#Binding<Bool>#>)
-                    } label: {
-                        CardView(note: note)
+                    VStack {
+                        Text(note.message ?? "")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        HStack {
+                            Text(note.date ?? Date.now, style: .date)
+                                .foregroundColor(.secondary)
+                                .opacity(0.8)
+                            Spacer(minLength: 0)
+                            NavigationLink {
+                                EditNoteView(note: note)
+                            } label: {
+                                    Image(systemName: "pencil")
+                                        .font(.system(size: 15, weight: .bold))
+                                        .padding(8)
+                                        .foregroundColor(.white)
+                                        .background(.black)
+                                        .clipShape(Circle())
+                            }
+                        }
+                        .padding(.top, 35)
                     }
+                    .padding()
+                    .background(Color(note.color ?? "Blue"))
+                    .cornerRadius(18)
                 }
-                .listRowBackground(Color.blue)
+                .listRowBackground(Color.black)
             }
             .padding(.top, 20)
             .padding(.horizontal)
