@@ -21,7 +21,7 @@ struct HomeView: View {
                 
                     //notesScrollView
                 }
-                //buttonAddNote
+                AddNoteButton()
             }
 //            .sheet(isPresented: $mainViewModel.isNewNote) {
 //                NoteCreateAndEditView(viewModel:
@@ -47,6 +47,24 @@ struct HomeView: View {
             .background(Color("Background").edgesIgnoringSafeArea(.all))
         }
         .searchable(text: $searchText, prompt: "Looking for something...")
+    }
+    
+    @ViewBuilder
+    func AddNoteButton() -> some View {
+        Button(action: {
+            withAnimation(.spring()) { showAddPage = true }
+        }) {
+            Image(systemName: "plus")
+                .font(.title2)
+                .foregroundColor(.white)
+                .padding(17)
+                .background(.black)
+                .clipShape(Circle())
+                .shadow(radius: 10)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .padding()
+        .padding(.trailing, 20)
     }
 }
 
