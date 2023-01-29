@@ -7,7 +7,7 @@
 
 import CoreData
 
-class DataController: ObservableObject {
+class CoreDataController: ObservableObject {
     let container = NSPersistentContainer(name: "Note")
     
     init() {

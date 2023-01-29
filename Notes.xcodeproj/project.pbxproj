@@ -17,6 +17,9 @@
 		E90904082985DCD3007196EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904072985DCD3007196EF /* Constants.swift */; };
 		E909040A2985DD21007196EF /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904092985DD21007196EF /* AddNoteView.swift */; };
 		E909040C2985E986007196EF /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909040B2985E986007196EF /* EditNoteView.swift */; };
+		E90904122985EF06007196EF /* View+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904112985EF06007196EF /* View+Modifier.swift */; };
+		E90904142985F1DB007196EF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904132985F1DB007196EF /* CardView.swift */; };
+		E90904162985F6E2007196EF /* FileSystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		E90904072985DCD3007196EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90904092985DD21007196EF /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		E909040B2985E986007196EF /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		E90904112985EF06007196EF /* View+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifier.swift"; sourceTree = "<group>"; };
+		E90904132985F1DB007196EF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E90904152985F6E2007196EF /* FileSystemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E90904052985D871007196EF /* HomeView.swift */,
+				E90904132985F1DB007196EF /* CardView.swift */,
 				E90904092985DD21007196EF /* AddNoteView.swift */,
 				E909040B2985E986007196EF /* EditNoteView.swift */,
 			);
@@ -95,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E90904002985D763007196EF /* CoreDataController.swift */,
+				E90904152985F6E2007196EF /* FileSystemController.swift */,
 				E90904022985D77D007196EF /* Note.xcdatamodeld */,
 			);
 			path = DataManager;
@@ -103,6 +111,7 @@
 		E90903F62985D3E3007196EF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E90904112985EF06007196EF /* View+Modifier.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,11 +214,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90904042985D77D007196EF /* Note.xcdatamodeld in Sources */,
+				E90904142985F1DB007196EF /* CardView.swift in Sources */,
+				E90904162985F6E2007196EF /* FileSystemController.swift in Sources */,
 				E90904062985D871007196EF /* HomeView.swift in Sources */,
 				E90904012985D763007196EF /* CoreDataController.swift in Sources */,
 				E909040C2985E986007196EF /* EditNoteView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,
 				E909040A2985DD21007196EF /* AddNoteView.swift in Sources */,
+				E90904122985EF06007196EF /* View+Modifier.swift in Sources */,
 				E90904082985DCD3007196EF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

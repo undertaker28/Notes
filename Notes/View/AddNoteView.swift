@@ -31,7 +31,7 @@ struct AddNoteView: View {
                 Spacer(minLength: 0)
                 
                 Button {
-                    DataController().addNote(message: message, date: date, color: Constants.colors[color], context: managedObjContext)
+                    CoreDataController().addNote(message: message, date: date, color: Constants.colors[color], context: managedObjContext)
                     withAnimation(.spring()) { showAddPage.toggle() }
                 } label: {
                     Text("Save")

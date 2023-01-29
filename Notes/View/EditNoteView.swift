@@ -32,7 +32,7 @@ struct EditNoteView: View {
                 Spacer(minLength: 0)
                 
                 Button {
-                    DataController().editNote(note: note, message: message, date: date, color: Constants.colors[color], context: managedObjContext)
+                    CoreDataController().editNote(note: note, message: message, date: date, color: Constants.colors[color], context: managedObjContext)
                     dismiss()
                 } label: {
                     Text("Save")
