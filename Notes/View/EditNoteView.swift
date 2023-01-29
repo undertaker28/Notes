@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct EditNoteView: View {
-    @Environment(\.managedObjectContext) var managedObjContext
+    @ObservedObject var notesSQLite = SQLiteNoteService.shared
+    @ObservedObject var notesFileSystem = FileSystemNoteService.shared
     @Environment(\.dismiss) var dismiss
     
     @State private var message: String = ""
     @State private var date: Date = Date.now
     @State private var color: Int = 0
-    var note: FetchedResults<Note>.Element
+    var note: NoteModel
+    var mode: Int
     
     var body: some View {
         VStack {
@@ -32,7 +34,14 @@ struct EditNoteView: View {
                 Spacer(minLength: 0)
                 
                 Button {
-                    CoreDataController().editNote(note: note, message: message, date: date, color: Constants.colors[color], context: managedObjContext)
+                    switch mode {
+                    case 0:
+                        notesSQLite.updateNote(oldNote: note, message: message, date: date, color: Constants.colors[color])
+                    case 1:
+                        notesFileSystem.updateNote(oldNote: note, newNote: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                    default:
+                        notesFileSystem.updateNote(oldNote: note, newNote: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                    }
                     dismiss()
                 } label: {
                     Text("Save")
@@ -85,9 +94,9 @@ struct EditNoteView: View {
             }
             .padding(.horizontal)
             .onAppear {
-                message = note.message!
-                date = note.date!
-                color = Constants.colors.firstIndex(of: note.color!) ?? 0
+                message = note.message
+                date = note.date
+                color = Constants.colors.firstIndex(of: note.color) ?? 0
             }
         }
         .navigationBarBackButtonHidden()

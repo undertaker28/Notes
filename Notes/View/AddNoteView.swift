@@ -8,40 +8,21 @@
 import SwiftUI
 
 struct AddNoteView: View {
-    @Environment(\.managedObjectContext) var managedObjContext
-    
-    @Binding var showAddPage: Bool
+    @ObservedObject var notesSQLite = SQLiteNoteService.shared
+    @ObservedObject var notesFileSystem = FileSystemNoteService.shared
+    @Environment(\.dismiss) var dismiss
     
     @State private var message: String = ""
     @State private var date: Date = Date.now
     @State private var color: Int = 0
     
+    var mode: Int
+    
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    showAddPage.toggle()
-                } label: {
-                    Text("Cancel")
-                }
-                Spacer(minLength: 0)
-                
-                Text("Add note")
-                
-                Spacer(minLength: 0)
-                
-                Button {
-                    CoreDataController().addNote(message: message, date: date, color: Constants.colors[color], context: managedObjContext)
-                    withAnimation(.spring()) { showAddPage.toggle() }
-                } label: {
-                    Text("Save")
-                }
-            }
-            .padding()
-            
+        VStack {            
             Divider()
             
-            VStack(alignment: .leading, spacing: 30) {
+            VStack(alignment: .center, spacing: 30) {
                 TextEditor(text: $message)
                     .font(.title3)
                     .shadow(color: .primary, radius: 1)
@@ -80,6 +61,28 @@ struct AddNoteView: View {
                     }
                     .id(color)
                 }
+                HStack {
+                    Button(action: {
+                        switch mode {
+                        case 0:
+                            notesSQLite.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                        case 1:
+                            notesFileSystem.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                        default:
+                            notesFileSystem.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                        }
+                        dismiss()
+                    }) {
+                        Text("Save")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 30)
+                    }
+                    .background(.black)
+                    .cornerRadius(.infinity)
+                    .padding()
+                }
                 Spacer(minLength: 0)
             }
             .padding(.horizontal)
@@ -90,6 +93,6 @@ struct AddNoteView: View {
 
 struct AddNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        AddNoteView(showAddPage: .constant(true))
+        AddNoteView(mode: 0)
     }
 }

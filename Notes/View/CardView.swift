@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct CardView: View {
-    @StateObject var note: FetchedResults<Note>.Element
+    var note: NoteModel
+    var mode: Int
 
     var body: some View {
         VStack {
-            Text(note.message ?? "")
+            Text(note.message)
                 .font(.title3)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
-                Text(note.date ?? Date.now, style: .date)
+                Text(note.date, style: .date)
                     .foregroundColor(.secondary)
                     .opacity(0.8)
                 Spacer(minLength: 0)
                 NavigationLink {
-                    EditNoteView(note: note)
+                    EditNoteView(note: note, mode: mode)
                 } label: {
                     Image(systemName: "pencil")
                         .font(.system(size: 15, weight: .bold))
@@ -35,7 +36,7 @@ struct CardView: View {
             .padding(.top, 35)
         }
         .padding()
-        .background(Color(note.color ?? "Blue"))
+        .background(Color(note.color))
         .cornerRadius(18)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteModel: Codable {
+struct NoteModel: Codable, Identifiable, Equatable {
     var id = UUID()
     var message: String
     var date: Date

@@ -12,15 +12,17 @@
 		E90903FB2985D42E007196EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903F92985D42D007196EF /* Colors.xcassets */; };
 		E90903FC2985D42E007196EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903FA2985D42D007196EF /* Assets.xcassets */; };
 		E90904012985D763007196EF /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904002985D763007196EF /* CoreDataController.swift */; };
-		E90904042985D77D007196EF /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E90904022985D77D007196EF /* Note.xcdatamodeld */; };
 		E90904062985D871007196EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904052985D871007196EF /* HomeView.swift */; };
 		E90904082985DCD3007196EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904072985DCD3007196EF /* Constants.swift */; };
-		E909040A2985DD21007196EF /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904092985DD21007196EF /* AddNoteView.swift */; };
-		E909040C2985E986007196EF /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909040B2985E986007196EF /* EditNoteView.swift */; };
 		E90904122985EF06007196EF /* View+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904112985EF06007196EF /* View+Modifier.swift */; };
-		E90904142985F1DB007196EF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904132985F1DB007196EF /* CardView.swift */; };
-		E90904162985F6E2007196EF /* FileSystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemController.swift */; };
+		E90904162985F6E2007196EF /* FileSystemNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemNoteService.swift */; };
 		E90904182985F7C6007196EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904172985F7C6007196EF /* Note.swift */; };
+		E909042329869F46007196EF /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E909042129869F46007196EF /* Note.xcdatamodeld */; };
+		E90904252986A39C007196EF /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904242986A39C007196EF /* AddNoteView.swift */; };
+		E90904272986A446007196EF /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904262986A446007196EF /* EditNoteView.swift */; };
+		E91C320E2986ACF400679D61 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E91C320D2986ACF400679D61 /* SQLite */; };
+		E91C842F2986A6620023791C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C842E2986A6620023791C /* CardView.swift */; };
+		E91C84312986AC830023791C /* SQLiteNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C84302986AC830023791C /* SQLiteNoteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +32,16 @@
 		E90903F92985D42D007196EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E90903FA2985D42D007196EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E90904002985D763007196EF /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		E90904032985D77D007196EF /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
 		E90904052985D871007196EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E90904072985DCD3007196EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E90904092985DD21007196EF /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
-		E909040B2985E986007196EF /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		E90904112985EF06007196EF /* View+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifier.swift"; sourceTree = "<group>"; };
-		E90904132985F1DB007196EF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E90904152985F6E2007196EF /* FileSystemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemController.swift; sourceTree = "<group>"; };
+		E90904152985F6E2007196EF /* FileSystemNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemNoteService.swift; sourceTree = "<group>"; };
 		E90904172985F7C6007196EF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E909042229869F46007196EF /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
+		E90904242986A39C007196EF /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		E90904262986A446007196EF /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		E91C842E2986A6620023791C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E91C84302986AC830023791C /* SQLiteNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteNoteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91C320E2986ACF400679D61 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +77,7 @@
 			children = (
 				E90903FD2985D45F007196EF /* Model */,
 				E90903F42985D3BF007196EF /* View */,
-				E90903F52985D3CA007196EF /* DataManager */,
+				E90903F52985D3CA007196EF /* Services */,
 				E90903F62985D3E3007196EF /* Helpers */,
 				E90903F72985D410007196EF /* Resources */,
 				E90903EC2985D340007196EF /* Preview Content */,
@@ -93,21 +97,22 @@
 			isa = PBXGroup;
 			children = (
 				E90904052985D871007196EF /* HomeView.swift */,
-				E90904132985F1DB007196EF /* CardView.swift */,
-				E90904092985DD21007196EF /* AddNoteView.swift */,
-				E909040B2985E986007196EF /* EditNoteView.swift */,
+				E91C842E2986A6620023791C /* CardView.swift */,
+				E90904242986A39C007196EF /* AddNoteView.swift */,
+				E90904262986A446007196EF /* EditNoteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		E90903F52985D3CA007196EF /* DataManager */ = {
+		E90903F52985D3CA007196EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E91C84302986AC830023791C /* SQLiteNoteService.swift */,
+				E90904152985F6E2007196EF /* FileSystemNoteService.swift */,
 				E90904002985D763007196EF /* CoreDataController.swift */,
-				E90904152985F6E2007196EF /* FileSystemController.swift */,
-				E90904022985D77D007196EF /* Note.xcdatamodeld */,
+				E909042129869F46007196EF /* Note.xcdatamodeld */,
 			);
-			path = DataManager;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E90903F62985D3E3007196EF /* Helpers */ = {
@@ -161,6 +166,9 @@
 			dependencies = (
 			);
 			name = Notes;
+			packageProductDependencies = (
+				E91C320D2986ACF400679D61 /* SQLite */,
+			);
 			productName = Notes;
 			productReference = E90903E32985D33F007196EF /* Notes.app */;
 			productType = "com.apple.product-type.application";
@@ -189,6 +197,9 @@
 				Base,
 			);
 			mainGroup = E90903DA2985D33F007196EF;
+			packageReferences = (
+				E91C320C2986ACF400679D61 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = E90903E42985D33F007196EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,15 +227,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90904042985D77D007196EF /* Note.xcdatamodeld in Sources */,
-				E90904142985F1DB007196EF /* CardView.swift in Sources */,
-				E90904162985F6E2007196EF /* FileSystemController.swift in Sources */,
+				E90904162985F6E2007196EF /* FileSystemNoteService.swift in Sources */,
+				E91C842F2986A6620023791C /* CardView.swift in Sources */,
+				E909042329869F46007196EF /* Note.xcdatamodeld in Sources */,
 				E90904062985D871007196EF /* HomeView.swift in Sources */,
 				E90904012985D763007196EF /* CoreDataController.swift in Sources */,
-				E909040C2985E986007196EF /* EditNoteView.swift in Sources */,
+				E90904252986A39C007196EF /* AddNoteView.swift in Sources */,
+				E90904272986A446007196EF /* EditNoteView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,
 				E90904182985F7C6007196EF /* Note.swift in Sources */,
-				E909040A2985DD21007196EF /* AddNoteView.swift in Sources */,
+				E91C84312986AC830023791C /* SQLiteNoteService.swift in Sources */,
 				E90904122985EF06007196EF /* View+Modifier.swift in Sources */,
 				E90904082985DCD3007196EF /* Constants.swift in Sources */,
 			);
@@ -428,13 +440,32 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E91C320C2986ACF400679D61 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E91C320D2986ACF400679D61 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E91C320C2986ACF400679D61 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		E90904022985D77D007196EF /* Note.xcdatamodeld */ = {
+		E909042129869F46007196EF /* Note.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E90904032985D77D007196EF /* Note.xcdatamodel */,
+				E909042229869F46007196EF /* Note.xcdatamodel */,
 			);
-			currentVersion = E90904032985D77D007196EF /* Note.xcdatamodel */;
+			currentVersion = E909042229869F46007196EF /* Note.xcdatamodel */;
 			path = Note.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
