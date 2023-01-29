@@ -20,6 +20,7 @@
 		E90904122985EF06007196EF /* View+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904112985EF06007196EF /* View+Modifier.swift */; };
 		E90904142985F1DB007196EF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904132985F1DB007196EF /* CardView.swift */; };
 		E90904162985F6E2007196EF /* FileSystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemController.swift */; };
+		E90904182985F7C6007196EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904172985F7C6007196EF /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E90904112985EF06007196EF /* View+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifier.swift"; sourceTree = "<group>"; };
 		E90904132985F1DB007196EF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E90904152985F6E2007196EF /* FileSystemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemController.swift; sourceTree = "<group>"; };
+		E90904172985F7C6007196EF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		E90903FD2985D45F007196EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E90904172985F7C6007196EF /* Note.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				E90904012985D763007196EF /* CoreDataController.swift in Sources */,
 				E909040C2985E986007196EF /* EditNoteView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,
+				E90904182985F7C6007196EF /* Note.swift in Sources */,
 				E909040A2985DD21007196EF /* AddNoteView.swift in Sources */,
 				E90904122985EF06007196EF /* View+Modifier.swift in Sources */,
 				E90904082985DCD3007196EF /* Constants.swift in Sources */,
