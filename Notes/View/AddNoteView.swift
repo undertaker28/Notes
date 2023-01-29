@@ -12,6 +12,7 @@ struct AddNoteView: View {
     @ObservedObject var notesFileSystem = FileSystemNoteService.shared
     @Environment(\.dismiss) var dismiss
     
+    @State private var id: Int = 0
     @State private var message: String = ""
     @State private var date: Date = Date.now
     @State private var color: Int = 0
@@ -86,6 +87,8 @@ struct AddNoteView: View {
                 Spacer(minLength: 0)
             }
             .padding(.horizontal)
+            .navigationTitle(Text("Add note"))
+            .navigationBarTitleDisplayMode(.inline)
         }
         .interactiveDismissDisabled()
     }

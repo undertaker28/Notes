@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class FileSystemNoteService: ObservableObject {
+final class FileSystemNoteService: ObservableObject {
     static let shared = FileSystemNoteService()
     private let dataSourceURL: URL
     @Published var allNotes = [NoteModel]()

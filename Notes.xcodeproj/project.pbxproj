@@ -11,7 +11,7 @@
 		E90903EE2985D340007196EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903ED2985D340007196EF /* Preview Assets.xcassets */; };
 		E90903FB2985D42E007196EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903F92985D42D007196EF /* Colors.xcassets */; };
 		E90903FC2985D42E007196EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903FA2985D42D007196EF /* Assets.xcassets */; };
-		E90904012985D763007196EF /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904002985D763007196EF /* CoreDataController.swift */; };
+		E90904012985D763007196EF /* CoreDataNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904002985D763007196EF /* CoreDataNoteService.swift */; };
 		E90904062985D871007196EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904052985D871007196EF /* HomeView.swift */; };
 		E90904082985DCD3007196EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904072985DCD3007196EF /* Constants.swift */; };
 		E90904122985EF06007196EF /* View+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904112985EF06007196EF /* View+Modifier.swift */; };
@@ -31,7 +31,7 @@
 		E90903ED2985D340007196EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E90903F92985D42D007196EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E90903FA2985D42D007196EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E90904002985D763007196EF /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		E90904002985D763007196EF /* CoreDataNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNoteService.swift; sourceTree = "<group>"; };
 		E90904052985D871007196EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E90904072985DCD3007196EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90904112985EF06007196EF /* View+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifier.swift"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			children = (
 				E91C84302986AC830023791C /* SQLiteNoteService.swift */,
 				E90904152985F6E2007196EF /* FileSystemNoteService.swift */,
-				E90904002985D763007196EF /* CoreDataController.swift */,
+				E90904002985D763007196EF /* CoreDataNoteService.swift */,
 				E909042129869F46007196EF /* Note.xcdatamodeld */,
 			);
 			path = Services;
@@ -231,7 +231,7 @@
 				E91C842F2986A6620023791C /* CardView.swift in Sources */,
 				E909042329869F46007196EF /* Note.xcdatamodeld in Sources */,
 				E90904062985D871007196EF /* HomeView.swift in Sources */,
-				E90904012985D763007196EF /* CoreDataController.swift in Sources */,
+				E90904012985D763007196EF /* CoreDataNoteService.swift in Sources */,
 				E90904252986A39C007196EF /* AddNoteView.swift in Sources */,
 				E90904272986A446007196EF /* EditNoteView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,

@@ -9,11 +9,10 @@ import SwiftUI
 
 @main
 struct NotesApp: App {
-    @StateObject var сoreDataController = CoreDataController()
+    //@StateObject var сoreDataController = CoreDataNoteService()
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environment(\.managedObjectContext, сoreDataController.container.viewContext)
         }
     }
 }

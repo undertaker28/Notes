@@ -8,7 +8,7 @@
 import Foundation
 
 struct NoteModel: Codable, Identifiable, Equatable {
-    var id = UUID()
+    var id = UUID().uuidString
     var message: String
     var date: Date
     var color: String

@@ -8,12 +8,11 @@
 import Foundation
 import SQLite
 
-class SQLiteNoteService: ObservableObject {
-    private let notes = Table("notes")
-
+final class SQLiteNoteService: ObservableObject {
     private var db: Connection?
 
-    private let id = Expression<UUID>("id")
+    private let notes = Table("notes")
+    private let id = Expression<String>("id")
     private let message = Expression<String>("message")
     private let color = Expression<String>("color")
     private let date = Expression<Date>("date")
@@ -70,7 +69,7 @@ class SQLiteNoteService: ObservableObject {
     
     func updateNote(oldNote: NoteModel, message: String, date: Date, color: String) {
         guard let database = db else { return }
-        let note = notes.filter(self.id == id)
+        let note = notes.filter(self.date == oldNote.date)
         do {
             let update = note.update([
                 self.message <- message,
@@ -88,7 +87,7 @@ class SQLiteNoteService: ObservableObject {
             return
         }
         do {
-            let filter = notes.filter(self.message == note.message)
+            let filter = notes.filter(self.date == note.date)
             try database.run(filter.delete())
             getNotesList()
         } catch {

@@ -1,5 +1,5 @@
 //
-//  CoreDataController.swift
+//  CoreDataNoteService.swift
 //  Notes
 //
 //  Created by Pavel on 29.01.23.
@@ -7,7 +7,7 @@
 
 import CoreData
 
-class CoreDataController: ObservableObject {
+final class CoreDataNoteService: ObservableObject {
     let container = NSPersistentContainer(name: "Note")
     
     init() {

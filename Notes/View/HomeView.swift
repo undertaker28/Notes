@@ -11,7 +11,18 @@ struct HomeView: View {
     @State private var searchText: String = ""
     @State private var showingAlert = false
     @State private var mode: Int = 0
-    
+    @State private var selectedNote: NoteModel = NoteModel(message: "", date: Date.now, color: "Blue")
+    @State private var copied = false {
+        didSet {
+            if copied == true {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation {
+                        copied = false
+                    }
+                }
+            }
+        }
+    }
     // @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var notesFromCoreData: FetchedResults<Note>
     
     @ObservedObject var notesSQLite = SQLiteNoteService.shared
@@ -20,6 +31,9 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                if copied {
+                    copiedButton()
+                }
                 VStack(spacing: 15) {
                     switch mode {
                     case 0:
@@ -80,27 +94,20 @@ struct HomeView: View {
                             removeData(note: note)
                         }
                         .onLongPressGesture {
+                            selectedNote = note
                             showingAlert = true
                         }
-                        .actionSheet(isPresented: $showingAlert) {
-                            ActionSheet(
-                                title: Text("Select a color"),
-                                buttons: [
-                                    .default(Text("Red")) {
-                                        print("test1")
-                                    },
-
-                                    .default(Text("Green")) {
-                                        print("test2")
-                                    },
-
-                                    .default(Text("Blue")) {
-                                        print("test3")
-                                    },
-
-                                    .cancel()
-                                ]
-                            )
+                        .alert("Please select an option", isPresented: $showingAlert) {
+                            Button("Copy", role: .none) {
+                                copyMessage(message: selectedNote.message)
+                            }
+                            Button("Share", role: .none) {
+                                shareMessage(message: selectedNote.message)
+                            }
+                            Button("Cancel", role: .cancel) { }
+                            Button("Delete", role: .destructive) {
+                                removeData(note: selectedNote)
+                            }
                         }
                 }
                 .listRowBackground(Color.black)
@@ -111,6 +118,46 @@ struct HomeView: View {
         .onAppear(perform: {
             notesSQLite.getNotesList()
         })
+    }
+    
+    @ViewBuilder
+    func copiedButton() -> some View {
+        HStack {
+            Image(systemName: "link")
+            Text("Copied to clipboard")
+        }
+        .fontWeight(.semibold)
+        .foregroundColor(.black)
+        .padding(.vertical, 12)
+        .padding(.horizontal, 20)
+        .background(Color.white.cornerRadius(15))
+        .overlay(
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(Color.black, lineWidth: 0.5)
+        )
+        .position(x: UIScreen.main.bounds.width / 2)
+        .transition(.move(edge: .top))
+        .padding(.top)
+        .animation(.easeInOut(duration: 1))
+        .zIndex(1)
+    }
+    
+    private func copyMessage(message: String) {
+        withAnimation {
+            copied = true
+        }
+        UIPasteboard.general.string = message
+    }
+    
+    private func shareMessage(message: String) {
+        let shareActivity = UIActivityViewController(activityItems: [message], applicationActivities: nil)
+        if let viewController = UIApplication.shared.windows.first?.rootViewController {
+            shareActivity.popoverPresentationController?.sourceView = viewController.view
+            // Setup share activity position on screen on bottom center
+            shareActivity.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height, width: 0, height: 0)
+            shareActivity.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+            viewController.present(shareActivity, animated: true, completion: nil)
+        }
     }
     
     private func removeData(note: NoteModel) {
