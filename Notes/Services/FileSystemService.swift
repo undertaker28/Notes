@@ -1,5 +1,5 @@
 //
-//  FileSystemNoteService.swift
+//  FileSystemService.swift
 //  Notes
 //
 //  Created by Pavel on 29.01.23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-final class FileSystemNoteService: ObservableObject {
-    static let shared = FileSystemNoteService()
+final class FileSystemService: ObservableObject {
+    static let shared = FileSystemService()
     private let dataSourceURL: URL
     @Published var allNotes = [NoteModel]()
     
@@ -47,15 +47,15 @@ final class FileSystemNoteService: ObservableObject {
         saveNotes()
     }
     
-    func updateNote(oldNote: NoteModel, newNote: NoteModel) {
-        if let index = allNotes.firstIndex(of: oldNote) {
-            allNotes[index] = newNote
+    func updateNote(changedNote: NoteModel) {
+        if let index = allNotes.firstIndex(where: { $0.id == changedNote.id }) {
+            allNotes[index] = changedNote
         }
         saveNotes()
     }
     
-    func deleteNote(note: NoteModel) {
-        if let index = allNotes.firstIndex(of: note) {
+    func deleteNote(id: String) {
+        if let index = allNotes.firstIndex(where: { $0.id == id }) {
             allNotes.remove(at: index)
         }
         saveNotes()

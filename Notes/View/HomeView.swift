@@ -23,10 +23,10 @@ struct HomeView: View {
             }
         }
     }
-    // @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var notesFromCoreData: FetchedResults<Note>
     
-    @ObservedObject var notesSQLite = SQLiteNoteService.shared
-    @ObservedObject var notesFileSystem = FileSystemNoteService.shared
+    @ObservedObject var notesSQLite = SQLiteService.shared
+    @ObservedObject var notesFileSystem = FileSystemService.shared
+    @ObservedObject var notesFireStore = FireStoreService.shared
     
     var body: some View {
         NavigationView {
@@ -41,19 +41,19 @@ struct HomeView: View {
                     case 1:
                         NotesScrollView(notes: notesFileSystem.allNotes)
                     default:
-                        NotesScrollView(notes: notesFileSystem.allNotes)
+                        NotesScrollView(notes: notesFireStore.allNotes)
                     }
                 }
                 NavigationLink {
                     AddNoteView(mode: mode)
                 } label: {
-                        Image(systemName: "plus")
-                            .font(.title2)
-                            .foregroundColor(.white)
-                            .padding(17)
-                            .background(.black)
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
+                    Image(systemName: "plus")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding(17)
+                        .background(.black)
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 .padding()
@@ -69,7 +69,7 @@ struct HomeView: View {
                                 .tag(0)
                             Text("File system")
                                 .tag(1)
-                            Text("Firebase")
+                            Text("Firestore")
                                 .tag(2)
                         }
                     } label: {
@@ -117,6 +117,7 @@ struct HomeView: View {
         }
         .onAppear(perform: {
             notesSQLite.getNotesList()
+            notesFireStore.getNotesList()
         })
     }
     
@@ -153,7 +154,6 @@ struct HomeView: View {
         let shareActivity = UIActivityViewController(activityItems: [message], applicationActivities: nil)
         if let viewController = UIApplication.shared.windows.first?.rootViewController {
             shareActivity.popoverPresentationController?.sourceView = viewController.view
-            // Setup share activity position on screen on bottom center
             shareActivity.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height, width: 0, height: 0)
             shareActivity.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
             viewController.present(shareActivity, animated: true, completion: nil)
@@ -164,11 +164,11 @@ struct HomeView: View {
         withAnimation {
             switch mode {
             case 0:
-                notesSQLite.deleteNote(note: note)
+                notesSQLite.deleteNote(id: note.id)
             case 1:
-                notesFileSystem.deleteNote(note: note)
+                notesFileSystem.deleteNote(id: note.id)
             default:
-                notesFileSystem.deleteNote(note: note)
+                notesFireStore.deleteNote(id: note.id)
             }
         }
     }

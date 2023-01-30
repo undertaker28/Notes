@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AddNoteView: View {
-    @ObservedObject var notesSQLite = SQLiteNoteService.shared
-    @ObservedObject var notesFileSystem = FileSystemNoteService.shared
+    @ObservedObject var notesSQLite = SQLiteService.shared
+    @ObservedObject var notesFileSystem = FileSystemService.shared
+    @ObservedObject var notesFireStore = FireStoreService.shared
     @Environment(\.dismiss) var dismiss
     
-    @State private var id: Int = 0
     @State private var message: String = ""
     @State private var date: Date = Date.now
     @State private var color: Int = 0
@@ -20,7 +20,7 @@ struct AddNoteView: View {
     var mode: Int
     
     var body: some View {
-        VStack {            
+        VStack {
             Divider()
             
             VStack(alignment: .center, spacing: 30) {
@@ -64,13 +64,14 @@ struct AddNoteView: View {
                 }
                 HStack {
                     Button(action: {
+                        let note = NoteModel(message: message, date: date, color: Constants.colors[color])
                         switch mode {
                         case 0:
-                            notesSQLite.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                            notesSQLite.addNote(note: note)
                         case 1:
-                            notesFileSystem.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                            notesFileSystem.addNote(note: note)
                         default:
-                            notesFileSystem.addNote(note: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                            notesFireStore.addNote(note: note)
                         }
                         dismiss()
                     }) {

@@ -1,5 +1,5 @@
 //
-//  SQLiteNoteService.swift
+//  SQLiteService.swift
 //  Notes
 //
 //  Created by Pavel on 29.01.23.
@@ -8,16 +8,16 @@
 import Foundation
 import SQLite
 
-final class SQLiteNoteService: ObservableObject {
+final class SQLiteService: ObservableObject {
     private var db: Connection?
-
+    
     private let notes = Table("notes")
     private let id = Expression<String>("id")
     private let message = Expression<String>("message")
     private let color = Expression<String>("color")
     private let date = Expression<Date>("date")
     
-    static var shared = SQLiteNoteService()
+    static var shared = SQLiteService()
     
     @Published var allNotes = [NoteModel]()
     
@@ -56,10 +56,11 @@ final class SQLiteNoteService: ObservableObject {
     func getAllNotes() -> [NoteModel] {
         var notes: [NoteModel] = []
         guard let database = db else { return [] }
-
+        
         do {
             for note in try database.prepare(self.notes) {
-                notes.append(NoteModel(message: note[message], date: note[date], color: note[color]))
+                let noteModel = NoteModel(id: note[id], message: note[message], date: note[date], color: note[color])
+                notes.append(noteModel)
             }
         } catch {
             print(error)
@@ -67,14 +68,14 @@ final class SQLiteNoteService: ObservableObject {
         return notes
     }
     
-    func updateNote(oldNote: NoteModel, message: String, date: Date, color: String) {
+    func updateNote(changedNote: NoteModel) {
         guard let database = db else { return }
-        let note = notes.filter(self.date == oldNote.date)
+        let note = notes.filter(self.id == changedNote.id)
         do {
             let update = note.update([
-                self.message <- message,
-                self.date <- date,
-                self.color <- color
+                self.message <- changedNote.message,
+                self.date <- changedNote.date,
+                self.color <- changedNote.color
             ])
             try database.run(update)
         } catch {
@@ -82,12 +83,12 @@ final class SQLiteNoteService: ObservableObject {
         }
     }
     
-    func deleteNote(note: NoteModel) {
+    func deleteNote(id: String) {
         guard let database = db else {
             return
         }
         do {
-            let filter = notes.filter(self.date == note.date)
+            let filter = notes.filter(self.id == id)
             try database.run(filter.delete())
             getNotesList()
         } catch {

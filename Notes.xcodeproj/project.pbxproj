@@ -7,41 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E147B66F8C71FD5D1898E74 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B737768018A0DC4C976EC037 /* Pods_Notes.framework */; };
 		E90903E72985D33F007196EF /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90903E62985D33F007196EF /* NotesApp.swift */; };
 		E90903EE2985D340007196EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903ED2985D340007196EF /* Preview Assets.xcassets */; };
 		E90903FB2985D42E007196EF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903F92985D42D007196EF /* Colors.xcassets */; };
 		E90903FC2985D42E007196EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90903FA2985D42D007196EF /* Assets.xcassets */; };
-		E90904012985D763007196EF /* CoreDataNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904002985D763007196EF /* CoreDataNoteService.swift */; };
+		E90904012985D763007196EF /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904002985D763007196EF /* CoreDataService.swift */; };
 		E90904062985D871007196EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904052985D871007196EF /* HomeView.swift */; };
 		E90904082985DCD3007196EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904072985DCD3007196EF /* Constants.swift */; };
 		E90904122985EF06007196EF /* View+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904112985EF06007196EF /* View+Modifier.swift */; };
-		E90904162985F6E2007196EF /* FileSystemNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemNoteService.swift */; };
+		E90904162985F6E2007196EF /* FileSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904152985F6E2007196EF /* FileSystemService.swift */; };
 		E90904182985F7C6007196EF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904172985F7C6007196EF /* Note.swift */; };
 		E909042329869F46007196EF /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E909042129869F46007196EF /* Note.xcdatamodeld */; };
 		E90904252986A39C007196EF /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904242986A39C007196EF /* AddNoteView.swift */; };
 		E90904272986A446007196EF /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90904262986A446007196EF /* EditNoteView.swift */; };
 		E91C320E2986ACF400679D61 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E91C320D2986ACF400679D61 /* SQLite */; };
 		E91C842F2986A6620023791C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C842E2986A6620023791C /* CardView.swift */; };
-		E91C84312986AC830023791C /* SQLiteNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C84302986AC830023791C /* SQLiteNoteService.swift */; };
+		E91C84312986AC830023791C /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C84302986AC830023791C /* SQLiteService.swift */; };
+		E944679029886342006CF3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E944678F29886342006CF3C2 /* GoogleService-Info.plist */; };
+		E944679229886797006CF3C2 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944679129886797006CF3C2 /* FireStoreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034D2495A6782DFAC484EF0F /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
+		B737768018A0DC4C976EC037 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90903E32985D33F007196EF /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90903E62985D33F007196EF /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
 		E90903ED2985D340007196EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E90903F92985D42D007196EF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E90903FA2985D42D007196EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E90904002985D763007196EF /* CoreDataNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataNoteService.swift; sourceTree = "<group>"; };
+		E90904002985D763007196EF /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		E90904052985D871007196EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E90904072985DCD3007196EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E90904112985EF06007196EF /* View+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifier.swift"; sourceTree = "<group>"; };
-		E90904152985F6E2007196EF /* FileSystemNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemNoteService.swift; sourceTree = "<group>"; };
+		E90904152985F6E2007196EF /* FileSystemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemService.swift; sourceTree = "<group>"; };
 		E90904172985F7C6007196EF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		E909042229869F46007196EF /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
 		E90904242986A39C007196EF /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		E90904262986A446007196EF /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		E91C842E2986A6620023791C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E91C84302986AC830023791C /* SQLiteNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteNoteService.swift; sourceTree = "<group>"; };
+		E91C84302986AC830023791C /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
+		E944678F29886342006CF3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E944679129886797006CF3C2 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
+		EF909FC9225D28B551217A1D /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +58,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91C320E2986ACF400679D61 /* SQLite in Frameworks */,
+				9E147B66F8C71FD5D1898E74 /* Pods_Notes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC21B3E88C31ED44D31416C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF909FC9225D28B551217A1D /* Pods-Notes.debug.xcconfig */,
+				034D2495A6782DFAC484EF0F /* Pods-Notes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E90903DA2985D33F007196EF = {
 			isa = PBXGroup;
 			children = (
 				E90903E52985D33F007196EF /* Notes */,
 				E90903E42985D33F007196EF /* Products */,
+				BC21B3E88C31ED44D31416C8 /* Pods */,
+				F94FF1E8341EA0C07F6BBAC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +127,10 @@
 		E90903F52985D3CA007196EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E91C84302986AC830023791C /* SQLiteNoteService.swift */,
-				E90904152985F6E2007196EF /* FileSystemNoteService.swift */,
-				E90904002985D763007196EF /* CoreDataNoteService.swift */,
+				E91C84302986AC830023791C /* SQLiteService.swift */,
+				E90904152985F6E2007196EF /* FileSystemService.swift */,
+				E944679129886797006CF3C2 /* FireStoreService.swift */,
+				E90904002985D763007196EF /* CoreDataService.swift */,
 				E909042129869F46007196EF /* Note.xcdatamodeld */,
 			);
 			path = Services;
@@ -126,6 +147,7 @@
 		E90903F72985D410007196EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E944678F29886342006CF3C2 /* GoogleService-Info.plist */,
 				E90903F82985D42D007196EF /* Assets */,
 				E90903E62985D33F007196EF /* NotesApp.swift */,
 				E90904072985DCD3007196EF /* Constants.swift */,
@@ -150,6 +172,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F94FF1E8341EA0C07F6BBAC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B737768018A0DC4C976EC037 /* Pods_Notes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E90903F12985D340007196EF /* Build configuration list for PBXNativeTarget "Notes" */;
 			buildPhases = (
+				95A9663662B4F7C1F71AB58E /* [CP] Check Pods Manifest.lock */,
 				E90903DF2985D33F007196EF /* Sources */,
 				E90903E02985D33F007196EF /* Frameworks */,
 				E90903E12985D33F007196EF /* Resources */,
+				536D9597D8A19C492EAB0D81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90903FB2985D42E007196EF /* Colors.xcassets in Resources */,
+				E944679029886342006CF3C2 /* GoogleService-Info.plist in Resources */,
 				E90903EE2985D340007196EF /* Preview Assets.xcassets in Resources */,
 				E90903FC2985D42E007196EF /* Assets.xcassets in Resources */,
 			);
@@ -222,22 +255,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		536D9597D8A19C492EAB0D81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Notes/Pods-Notes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95A9663662B4F7C1F71AB58E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E90903DF2985D33F007196EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E90904162985F6E2007196EF /* FileSystemNoteService.swift in Sources */,
+				E90904162985F6E2007196EF /* FileSystemService.swift in Sources */,
 				E91C842F2986A6620023791C /* CardView.swift in Sources */,
 				E909042329869F46007196EF /* Note.xcdatamodeld in Sources */,
 				E90904062985D871007196EF /* HomeView.swift in Sources */,
-				E90904012985D763007196EF /* CoreDataNoteService.swift in Sources */,
+				E90904012985D763007196EF /* CoreDataService.swift in Sources */,
 				E90904252986A39C007196EF /* AddNoteView.swift in Sources */,
 				E90904272986A446007196EF /* EditNoteView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,
 				E90904182985F7C6007196EF /* Note.swift in Sources */,
-				E91C84312986AC830023791C /* SQLiteNoteService.swift in Sources */,
+				E91C84312986AC830023791C /* SQLiteService.swift in Sources */,
 				E90904122985EF06007196EF /* View+Modifier.swift in Sources */,
+				E944679229886797006CF3C2 /* FireStoreService.swift in Sources */,
 				E90904082985DCD3007196EF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +437,7 @@
 		};
 		E90903F22985D340007196EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF909FC9225D28B551217A1D /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -390,6 +467,7 @@
 		};
 		E90903F32985D340007196EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 034D2495A6782DFAC484EF0F /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

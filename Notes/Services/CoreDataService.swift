@@ -1,5 +1,5 @@
 //
-//  CoreDataNoteService.swift
+//  CoreDataService.swift
 //  Notes
 //
 //  Created by Pavel on 29.01.23.
@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class CoreDataNoteService: ObservableObject {
+final class CoreDataService: ObservableObject {
     let container = NSPersistentContainer(name: "Note")
     
     init() {
@@ -39,7 +39,7 @@ final class CoreDataNoteService: ObservableObject {
         save(context: context)
     }
     
-    func editNote(note: Note, message: String, date: Date, color: String, context: NSManagedObjectContext) {
+    func updateNote(note: Note, message: String, date: Date, color: String, context: NSManagedObjectContext) {
         note.message = message
         note.date = date
         note.color = color

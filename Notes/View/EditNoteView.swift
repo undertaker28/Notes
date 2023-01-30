@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct EditNoteView: View {
-    @ObservedObject var notesSQLite = SQLiteNoteService.shared
-    @ObservedObject var notesFileSystem = FileSystemNoteService.shared
+    @ObservedObject var notesSQLite = SQLiteService.shared
+    @ObservedObject var notesFileSystem = FileSystemService.shared
+    @ObservedObject var notesFireStore = FireStoreService.shared
     @Environment(\.dismiss) var dismiss
     
-    @State private var id: Int = 0
+    @State private var id: String = ""
     @State private var message: String = ""
     @State private var date: Date = Date.now
     @State private var color: Int = 0
@@ -36,13 +37,14 @@ struct EditNoteView: View {
                 Spacer(minLength: 0)
                 
                 Button {
+                    let note = NoteModel(id: id, message: message, date: date, color: Constants.colors[color])
                     switch mode {
                     case 0:
-                        notesSQLite.updateNote(oldNote: note, message: message, date: date, color: Constants.colors[color])
+                        notesSQLite.updateNote(changedNote: note)
                     case 1:
-                        notesFileSystem.updateNote(oldNote: note, newNote: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                        notesFileSystem.updateNote(changedNote: note)
                     default:
-                        notesFileSystem.updateNote(oldNote: note, newNote: NoteModel(message: message, date: date, color: Constants.colors[color]))
+                        notesFireStore.updateNote(changedNote: note)
                     }
                     dismiss()
                 } label: {
@@ -58,7 +60,7 @@ struct EditNoteView: View {
                     .font(.title3)
                     .shadow(color: .primary, radius: 1)
                     .padding()
-                    .frame(height: UIScreen.main.bounds.height/2 - 200)
+                    .frame(height: UIScreen.main.bounds.height / 2 - 200)
                 
                 DatePicker("Date", selection: $date, in: ...Date.now,displayedComponents: .date)
                 
@@ -96,6 +98,7 @@ struct EditNoteView: View {
             }
             .padding(.horizontal)
             .onAppear {
+                id = note.id
                 message = note.message
                 date = note.date
                 color = Constants.colors.firstIndex(of: note.color) ?? 0

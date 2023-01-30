@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     var note: NoteModel
     var mode: Int
-
+    
     var body: some View {
         VStack {
             Text(note.message)
