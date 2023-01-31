@@ -24,6 +24,8 @@
 		E91C320E2986ACF400679D61 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E91C320D2986ACF400679D61 /* SQLite */; };
 		E91C842F2986A6620023791C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C842E2986A6620023791C /* CardView.swift */; };
 		E91C84312986AC830023791C /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C84302986AC830023791C /* SQLiteService.swift */; };
+		E92311FC2989D5B100865196 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92311FB2989D5B100865196 /* SplashScreenView.swift */; };
+		E92311FF2989D9C100865196 /* MarkPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E92311FE2989D9C100865196 /* MarkPro-Bold.otf */; };
 		E944679029886342006CF3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E944678F29886342006CF3C2 /* GoogleService-Info.plist */; };
 		E944679229886797006CF3C2 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944679129886797006CF3C2 /* FireStoreService.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,9 @@
 		E90904262986A446007196EF /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		E91C842E2986A6620023791C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E91C84302986AC830023791C /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
+		E92311FB2989D5B100865196 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		E92311FE2989D9C100865196 /* MarkPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.otf"; sourceTree = "<group>"; };
+		E92312002989D9F400865196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E944678F29886342006CF3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E944679129886797006CF3C2 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
 		EF909FC9225D28B551217A1D /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 				E90903F42985D3BF007196EF /* View */,
 				E90903F52985D3CA007196EF /* Services */,
 				E90903F62985D3E3007196EF /* Helpers */,
+				E92311FD2989D9AD00865196 /* Fonts */,
 				E90903F72985D410007196EF /* Resources */,
 				E90903EC2985D340007196EF /* Preview Content */,
 			);
@@ -116,6 +122,7 @@
 		E90903F42985D3BF007196EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E92311FB2989D5B100865196 /* SplashScreenView.swift */,
 				E90904052985D871007196EF /* HomeView.swift */,
 				E91C842E2986A6620023791C /* CardView.swift */,
 				E90904242986A39C007196EF /* AddNoteView.swift */,
@@ -147,10 +154,11 @@
 		E90903F72985D410007196EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E944678F29886342006CF3C2 /* GoogleService-Info.plist */,
 				E90903F82985D42D007196EF /* Assets */,
 				E90903E62985D33F007196EF /* NotesApp.swift */,
 				E90904072985DCD3007196EF /* Constants.swift */,
+				E944678F29886342006CF3C2 /* GoogleService-Info.plist */,
+				E92312002989D9F400865196 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,6 +178,14 @@
 				E90904172985F7C6007196EF /* Note.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E92311FD2989D9AD00865196 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E92311FE2989D9C100865196 /* MarkPro-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F94FF1E8341EA0C07F6BBAC7 /* Frameworks */ = {
@@ -250,6 +266,7 @@
 				E944679029886342006CF3C2 /* GoogleService-Info.plist in Resources */,
 				E90903EE2985D340007196EF /* Preview Assets.xcassets in Resources */,
 				E90903FC2985D42E007196EF /* Assets.xcassets in Resources */,
+				E92311FF2989D9C100865196 /* MarkPro-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +326,7 @@
 				E90904012985D763007196EF /* CoreDataService.swift in Sources */,
 				E90904252986A39C007196EF /* AddNoteView.swift in Sources */,
 				E90904272986A446007196EF /* EditNoteView.swift in Sources */,
+				E92311FC2989D5B100865196 /* SplashScreenView.swift in Sources */,
 				E90903E72985D33F007196EF /* NotesApp.swift in Sources */,
 				E90904182985F7C6007196EF /* Note.swift in Sources */,
 				E91C84312986AC830023791C /* SQLiteService.swift in Sources */,
@@ -447,6 +465,7 @@
 				DEVELOPMENT_TEAM = G4T7QK2U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,6 +496,7 @@
 				DEVELOPMENT_TEAM = G4T7QK2U75;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Notes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
